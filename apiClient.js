@@ -38,28 +38,22 @@ async function batchRequest(apiUrl, requests) {
 
 // Function to fetch posts from the API
 async function fetchPosts(apiUrl) {
-    // Example implementation to fetch posts
     try {
-        // Code to make HTTP request and retrieve posts from the API
-        const posts = await fetchData(apiUrl, 'posts', {});
-
-        return posts;
-
-        // If the request is successful, return the posts
-        // If the request fails, throw an error
+      const response = await axios.get(`${apiUrl}/posts`);
+      return response.data;
     } catch (error) {
-        throw new Error('Error fetching posts: Network Error');
+      throw new Error(`Error fetching posts: ${error.message}`);
     }
-}
-
+  }
+  
 // Function to fetch users from the API
 async function fetchUsers(apiUrl) {
     // Example implementation to fetch users
     try {
         // Code to make HTTP request and retrieve users from the API
-        const users = await fetchData(apiUrl, 'users', {});
+        const users = await axios.get(`${apiUrl}/posts`);
 
-        return users;
+        return users.data;
         // If an error occurs during the request, throw an error
 
     } catch (error) {
