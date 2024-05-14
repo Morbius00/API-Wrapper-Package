@@ -1,0 +1,21 @@
+{
+  "name": "ez-api-wrapper",
+  "version": "1.0.0",
+  "description": "Wrapper for an API: If there's an API you frequently use, you could create a wrapper for it that simplifies the process of making requests and handling responses. This could be for anything from weather data to social media APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.test.js"
+  },
+  "author": "Morbius",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "node-cache": "^5.1.2"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.4.0",
+    "sinon": "^17.0.1"
+  }
+}
