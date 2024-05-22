@@ -1,27 +1,40 @@
-// test/users.test.js
-
 const assert = require('assert');
-const { fetchUsers } = require('../apiClient');
+const { fetchPosts, fetchUsers } = require('../apiClient.js');
 
-describe('Users API', () => {
-  it('should fetch users from the API', async () => {
-    // Test fetching users from the API
-    const users = await fetchUsers('https://jsonplaceholder.typicode.com');
+const apiUrl = 'https://jsonplaceholder.typicode.com';
 
-    // Assert that the returned value is an array
-    assert(Array.isArray(users), 'Users should be an array');
+describe('API Client', function () {
+  // Test to verify fetching posts from the API
+  it('should fetch posts from the API', async function () {
+    const posts = await fetchPosts(apiUrl);
+    assert(Array.isArray(posts), 'Posts should be an array');
+    assert(posts.length > 0, 'Posts array should not be empty');
   });
 
-  it('should handle errors when fetching users', async () => {
-    // Test handling errors when fetching users
-    let error = null;
+  // Test to verify error handling when fetching posts
+  it('should handle errors when fetching posts', async function () {
     try {
-      await fetchUsers('invalid-url'); // Pass an invalid URL to trigger an error
-    } catch (err) {
-      error = err;
+      await fetchPosts('https://invalid-url.com'); // Pass an invalid URL to trigger an error
+      assert.fail('An error should be thrown when fetching posts');
+    } catch (error) {
+      assert.match(error.message, /Error fetching posts:/, 'Request failed with status code 404');
     }
+  });
 
-    // Assert that an error occurred
-    assert(error instanceof Error, 'An error should be thrown when fetching users');
+  // Test to verify fetching users from the API
+  it('should fetch users from the API', async function () {
+    const users = await fetchUsers(apiUrl);
+    assert(Array.isArray(users), 'Users should be an array');
+    assert(users.length > 0, 'Users array should not be empty');
+  });
+
+  // Test to verify error handling when fetching users
+  it('should handle errors when fetching users', async function () {
+    try {
+      await fetchUsers('https://invalid-url.com');  // Pass an invalid URL to trigger an error
+      assert.fail('An error should be thrown when fetching users');
+    } catch (error) {
+      assert.match(error.message, /Error fetching users:/, 'Request failed with status code 404');
+    }
   });
 });

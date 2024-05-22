@@ -1,13 +1,5 @@
-const apiClient = require('../apiClient');
+import { fetchData } from '../apiClient.js';
 
-async function getUserById(apiUrl, userId) {
-    try {
-        return await apiClient.fetchData(apiUrl, `users/${userId}`);
-    } catch (error) {
-        throw new Error(`Error fetching user data: ${error.message}`);
-    }
+export async function fetchUsers() {
+  return fetchData('/users');
 }
-
-module.exports = {
-    getUserById
-};

@@ -11,3 +11,4 @@ async function getPostsByUserId(apiUrl, userId) {
 module.exports = {
     getPostsByUserId
 };
+
