@@ -1,19 +1,19 @@
 ![Star Badge](https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99)
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 
-# API-Wrapper-Package
-Wrapper for an API: If there's an API you frequently use, ou could simply use our API-Wrapper-Package for it that simplifies the process of making requests and handling responses. This could be for anything from weather data to social media APIs.
+# EZ-API-Wrapper-Package
+Wrapper for an API: If there's an API you frequently use, ou could simply use our EZ-API-Wrapper-Package for it that simplifies the process of making requests and handling responses. This could be for anything from weather data to social media APIs.
 
 ## Installation:
 First, the user needs to install the package in their project. They can do this using npm or yarn:
 
 ```bash
-npm install my-api-wrapper-package
+npm install ez-api-wrapper-package
 ```
 or
 
 ```bash
-yarn add my-api-wrapper-package
+yarn add ez-api-wrapper-package
 ```
 ## Importing:
 Once installed, the user can import the required functions or modules from the package into their project files where they need to interact with the API.
@@ -21,7 +21,7 @@ Once installed, the user can import the required functions or modules from the p
 
 ```javascript
 // Import the API client module
-const { fetchData, fetchPosts, fetchUsers } = require('my-api-wrapper-package');
+const { fetchData, fetchPosts, fetchUsers } = require('ez-api-wrapper-package');
 ```
 
 ## Usage:
@@ -48,7 +48,7 @@ try {
 }
 ```
 ## Customization:
-Users can customize the behavior of the API wrapper package according to their needs by passing different parameters to the functions or by modifying the package source code if necessary.
+Users can customize the behavior of the EZ-API-Wrapper-Package according to their needs by passing different parameters to the functions or by modifying the package source code if necessary.
 
 ## Testing:
 Finally, users can write tests to ensure that the package functions behave as expected in different scenarios. They can use testing frameworks like Mocha or Jest to write and run tests for the package functions.
@@ -57,7 +57,7 @@ Finally, users can write tests to ensure that the package functions behave as ex
 
 ```javascript
 // Import the API wrapper package
-const { fetchPosts } = require('my-api-wrapper-package');
+const { fetchPosts } = require('ez-api-wrapper-package');
 
 // Define the API URL
 const apiUrl = 'https://jsonplaceholder.typicode.com';
@@ -81,7 +81,7 @@ getPosts();
 
 ```
 
-## Using API Wrapper Package:
+## Using EZ-API-Wrapper-Package:
 
 ### Pros:
 
@@ -108,5 +108,5 @@ getPosts();
 - Complexity: Dealing with low-level HTTP operations and error handling can introduce complexity and potential bugs, especially for developers less familiar with these concepts.
 - Maintenance: Users are responsible for maintaining their own HTTP request code, which may require updates and adjustments over time as the project evolves or API changes occur.
 
-Overall, using your API wrapper package offers convenience, consistency, and potentially improved performance through added features, while not using it provides greater control and flexibility but requires more effort in terms of implementation and maintenance. Users need to weigh these factors based on their project requirements and preferences.
+Overall, using your EZ-API-Wrapper-Package offers convenience, consistency, and potentially improved performance through added features, while not using it provides greater control and flexibility but requires more effort in terms of implementation and maintenance. Users need to weigh these factors based on their project requirements and preferences.
 
