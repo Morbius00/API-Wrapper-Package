@@ -8,12 +8,12 @@ Wrapper for an API: If there's an API you frequently use, ou could simply use ou
 First, the user needs to install the package in their project. They can do this using npm or yarn:
 
 ```bash
-npm install ez-api-wrapper-package
+npm install ez-api-wrapper
 ```
 or
 
 ```bash
-yarn add ez-api-wrapper-package
+yarn add ez-api-wrapper
 ```
 ## Importing:
 Once installed, the user can import the required functions or modules from the package into their project files where they need to interact with the API.
@@ -21,7 +21,7 @@ Once installed, the user can import the required functions or modules from the p
 
 ```javascript
 // Import the API client module
-const { fetchData, fetchPosts, fetchUsers } = require('ez-api-wrapper-package');
+const { fetchData, fetchPosts, fetchUsers } = require('ez-api-wrapper');
 ```
 
 ## Usage:
@@ -57,7 +57,7 @@ Finally, users can write tests to ensure that the package functions behave as ex
 
 ```javascript
 // Import the API wrapper package
-const { fetchPosts } = require('ez-api-wrapper-package');
+const { fetchPosts } = require('ez-api-wrapper');
 
 // Define the API URL
 const apiUrl = 'https://jsonplaceholder.typicode.com';
