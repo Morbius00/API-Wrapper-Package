@@ -1,3 +1,6 @@
+![Star Badge](https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99)
+![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
+
 # API-Wrapper-Package
 Wrapper for an API: If there's an API you frequently use, you could create a wrapper for it that simplifies the process of making requests and handling responses. This could be for anything from weather data to social media APIs.
 
@@ -50,7 +53,7 @@ Users can customize the behavior of the API wrapper package according to their n
 ## Testing:
 Finally, users can write tests to ensure that the package functions behave as expected in different scenarios. They can use testing frameworks like Mocha or Jest to write and run tests for the package functions.
 
-## code snippet where a user imports and uses API wrapper package to fetch posts from an API: ##
+### A code snippet how a user imports and uses API wrapper package to fetch posts from an API: ##
 
 ```javascript
 // Import the API wrapper package
@@ -106,3 +109,4 @@ getPosts();
 - Maintenance: Users are responsible for maintaining their own HTTP request code, which may require updates and adjustments over time as the project evolves or API changes occur.
 
 Overall, using your API wrapper package offers convenience, consistency, and potentially improved performance through added features, while not using it provides greater control and flexibility but requires more effort in terms of implementation and maintenance. Users need to weigh these factors based on their project requirements and preferences.
+
