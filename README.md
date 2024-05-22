@@ -2,7 +2,7 @@
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 
 # API-Wrapper-Package
-Wrapper for an API: If there's an API you frequently use, you could create a wrapper for it that simplifies the process of making requests and handling responses. This could be for anything from weather data to social media APIs.
+Wrapper for an API: If there's an API you frequently use, ou could simply use our API-Wrapper-Package for it that simplifies the process of making requests and handling responses. This could be for anything from weather data to social media APIs.
 
 ## Installation:
 First, the user needs to install the package in their project. They can do this using npm or yarn:
