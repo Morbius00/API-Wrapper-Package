@@ -51,7 +51,7 @@ async function fetchUsers(apiUrl) {
     // Example implementation to fetch users
     try {
         // Code to make HTTP request and retrieve users from the API
-        const users = await axios.get(`${apiUrl}/posts`);
+        const users = await axios.get(`${apiUrl}/users`);
 
         return users.data;
         // If an error occurs during the request, throw an error
