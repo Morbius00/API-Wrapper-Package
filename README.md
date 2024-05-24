@@ -57,27 +57,28 @@ Finally, users can write tests to ensure that the package functions behave as ex
 
 ```javascript
 // Import the API wrapper package
-const { fetchPosts } = require('ez-api-wrapper');
+// Import the API client module
+const { fetchData, fetchPosts, fetchUsers } = require('ez-api-wrapper');
 
-// Define the API URL
-const apiUrl = 'https://jsonplaceholder.typicode.com';
-
-// Function to fetch posts from the API
-async function getPosts() {
+// Example usage: Fetch posts from the API
+(async () => {
     try {
-        // Fetch posts from the API using the package function
-        const posts = await fetchPosts(apiUrl);
-        
-        // Log the fetched posts
+        const posts = await fetchPosts('https://jsonplaceholder.typicode.com');
         console.log('Fetched posts:', posts);
     } catch (error) {
-        // Handle errors
         console.error('Error fetching posts:', error.message);
     }
-}
+})();
 
-// Call the function to fetch posts
-getPosts();
+// Example usage: Fetch users from the API
+(async () => {
+    try {
+        const users = await fetchUsers('https://jsonplaceholder.typicode.com');
+        console.log('Fetched users:', users);
+    } catch (error) {
+        console.error('Error fetching users:', error.message);
+    }
+})();
 
 ```
 

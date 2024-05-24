@@ -1,9 +1,21 @@
 const axios = require('axios');
-const NodeCache = require('node-cache');
+const EventEmitter = require('eventemitter3');
 
 // Create a new instance of NodeCache
-const cache = new NodeCache();
+let cache;
+if (typeof window === 'undefined') {
+    // Node.js environment
+    const NodeCache = require('node-cache');
+    cache = new NodeCache();
+} else {
+    // Browser environment
+    cache = new Map();
+}
 
+// Create an event emitter instance
+const emitter = new EventEmitter();
+
+// Function to fetch data from the API
 async function fetchData(apiUrl, endpoint, params, cacheTTL = 60) {
     const cacheKey = `${endpoint}-${JSON.stringify(params)}`;
 
@@ -19,10 +31,22 @@ async function fetchData(apiUrl, endpoint, params, cacheTTL = 60) {
         const responseData = response.data;
 
         // Cache the response data with the specified TTL
-        cache.set(cacheKey, responseData, cacheTTL);
+        if (typeof window === 'undefined') {
+            cache.set(cacheKey, responseData, cacheTTL);
+        } else {
+            // Simple expiration mechanism for browser environment
+            setTimeout(() => cache.delete(cacheKey), cacheTTL * 1000);
+            cache.set(cacheKey, responseData);
+        }
+
+        // Emit a success event
+        emitter.emit('fetchSuccess', responseData);
 
         return responseData;
     } catch (error) {
+        // Emit an error event
+        emitter.emit('fetchError', error);
+
         throw new Error(`Error fetching data from ${endpoint}: ${error.message}`);
     }
 }
@@ -60,10 +84,10 @@ async function fetchUsers(apiUrl) {
         throw new Error('Error fetching users: Network Error');
     }
 }
-
 module.exports = {
     fetchData,
     batchRequest,
     fetchPosts,
-    fetchUsers
-};
+    fetchUsers,
+    
+  };
