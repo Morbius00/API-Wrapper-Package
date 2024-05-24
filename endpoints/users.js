@@ -1,5 +1,13 @@
-import { fetchData } from '../apiClient.js';
+const apiClient = require('../apiClient');
 
-export async function fetchUsers() {
-  return fetchData('/users');
+async function fetchUsers() {
+    try {
+        return await apiClient.fetchData('/users');
+    } catch (error) {
+        throw new Error(`Error fetching users: ${error.message}`);
+    }
 }
+
+module.exports = {
+    fetchUsers
+};
